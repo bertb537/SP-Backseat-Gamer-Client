@@ -1,0 +1,57 @@
+﻿<Page x:Class="BackseatGamerClient.TrackingScreenInProgress"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BackseatGamerClient"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TrackingScreenInProgress">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Rectangle x:Name="Logo" Style="{StaticResource HeaderLogo}"/>
+            <Label Content=" Tracking" Style="{StaticResource HeaderTitle}"/>
+        </StackPanel>
+        <Label x:Name="Result_Label" Grid.Row="1" Style="{StaticResource ResultLabelInProgress}" Content="In-Progress"/>
+        <Border Grid.Row="2" VerticalAlignment="Top" MinHeight="220" Margin="10,10,10,20" Padding="10,0,10,10" BorderBrush="White" BorderThickness="2">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                <Label Style="{StaticResource Header1}" Content="Live Game Statistics" HorizontalAlignment="Left"/>
+                <Grid VerticalAlignment="center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="2*" MinWidth="100" MaxWidth="300"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*" MinWidth="30" MaxWidth="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource FormLabel}" Content="User: "/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource FormTextBox}"/>
+                    <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource FormLabel}" Content="Eliminations: "/>
+                    <TextBox Grid.Row="1" Grid.Column="3" Style="{StaticResource FormTextBox}"/>
+                    <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource FormLabel}" Content="Battlenet ID: "/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource FormTextBox}"/>
+                    <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource FormLabel}" Content="Deaths: "/>
+                    <TextBox Grid.Row="2" Grid.Column="3" Style="{StaticResource FormTextBox}"/>
+                    <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource FormLabel}" Content="Map: "/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource FormTextBox}"/>
+                    <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource FormLabel}" Content="Hero: "/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource FormTextBox}"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+        <Button Grid.Row="3" Click="StopTracking_Click" Style="{StaticResource BackButton}" Content="Stop Tracking"  Margin="10,10,10,10" Width="auto" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+    </Grid>
+</Page>

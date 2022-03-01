@@ -1,0 +1,52 @@
+﻿<Page x:Class="BackseatGamerClient.HomeScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BackseatGamerClient"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HomeScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <Rectangle x:Name="Logo" Style="{StaticResource HeaderLogo}"/>
+            <Label Content=" Backseat Gamer" Style="{StaticResource HeaderTitle}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="5" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border Margin="0,0,0,20" Padding="20,0,20, 20" BorderBrush="White" BorderThickness="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*" MinWidth="300" MaxWidth="350"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Header1}" Content="Login"/>
+                    <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource FormLabel}" Content="User:"></Label>
+                    <TextBox x:Name="UserID_TextBox" Grid.Column="1" Grid.Row="1" Style="{StaticResource FormTextBox}"></TextBox>
+                    <Label Grid.Column="0" Grid.Row="2" Style="{StaticResource FormLabel}" Content="Battlenet ID:"></Label>
+                    <TextBox x:Name="BattlenetID_TextBox" Grid.Column="1" Grid.Row="2" Style="{StaticResource FormTextBox}"></TextBox>
+                </Grid>
+            </Border>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button x:Name="StatisticsScreenNav_Button" Grid.Column="0" Click="StatisticsScreenNav_Button_Click" Style="{StaticResource BlueButton}" Margin="0,0,10,0" Content="View Statistics"/>
+                <Button x:Name="TrackingScreenNav_Button" Grid.Column="1" Click="TrackingScreenNav_Button_Click" Style="{StaticResource BlueButton}" Margin="10,0,0,0" Content="Start Tracking"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>
